@@ -15,7 +15,7 @@ function Order() {
 
         <div className={style.wrap_list}>
           <ul className={style.list}>
-            {orderList.map(item => <OrderGoods title={item} />)}
+            {orderList.map(item => <OrderGoods item={item} />)}
           </ul>
 
           <div className={style.total}>
