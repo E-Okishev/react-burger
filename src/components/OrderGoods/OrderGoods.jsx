@@ -1,9 +1,9 @@
 import Count from '../Count/Count';
 import style from './OrderGoods.module.css'
 
-function OrderGoods({item}) {
+function OrderGoods({i, item}) {
   return (
-    <li className={style.item}>
+    <li key={i} className={style.item}>
       <img className={style.image} src="img/burger_1.jpg" alt={item} />
 
       <div className={style.goods}>
