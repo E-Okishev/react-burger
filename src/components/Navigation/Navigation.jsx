@@ -4,7 +4,7 @@ import Container from "../Container/Container";
 import style from "./Navigation.module.css";
 
 function Navigation() {
-  const { category, activeCategory } = useSelector(() => state.category);
+  const { category, activeCategory } = useSelector((state) => state.category);
 
   return (
     <nav className={style.navigation}>

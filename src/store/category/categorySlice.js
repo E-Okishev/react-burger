@@ -20,11 +20,11 @@ const categorySlice = createSlice({
   name: "category",
   initialState,
   reducers: {
-    chengeCategory(state, action) {
+    changeCategory(state, action) {
       state.activeCategory = action.payload.indexCategory
     }
   }
 });
 
-export const { chengeCategory } = categorySlice.actions;
+export const { changeCategory } = categorySlice.actions;
 export default categorySlice.reducer;
