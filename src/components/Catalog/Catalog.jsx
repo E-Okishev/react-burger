@@ -9,10 +9,10 @@ import style from "./Catalog.module.css";
 function Catalog() {
   const { products } = useSelector((state) => state.product);
   const dispatch = useDispatch();
-  const { category, activeCategory } = useSelector(state => state.category);
+  const { category, activeCategory } = useSelector((state) => state.category);
 
   useEffect(() => {
-    if(category.length) {
+    if (category.length) {
       dispatch(productRequestAsync(category[activeCategory].title));
     }
   }, [category, activeCategory]);
@@ -26,7 +26,7 @@ function Catalog() {
 
           <div className={style.wrap_list}>
             <ul className={style.list}>
-              {products.map(item => (
+              {products.map((item) => (
                 <li key={item.id} className={style.item}>
                   <CatalogProduct item={item} />
                 </li>
