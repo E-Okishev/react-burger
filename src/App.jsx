@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import { Provider } from "react-redux";
 import { store } from "./store/index";
+import { ModalDelivery } from "./components/ModalDelivery/ModalDelivery";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Catalog />
       </main>
       <Footer />
+      <ModalDelivery />
     </Provider>
   );
 }

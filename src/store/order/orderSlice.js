@@ -26,7 +26,7 @@ export const orderRequestAsync = createAsyncThunk(
   (_, { getState }) => {
     const listId = getState().order.orderList.map(item => item.id)
 
-    return fetch(`${API_URI}${POSTFIX}?lost = ${listId}`)
+    return fetch(`${API_URI}${POSTFIX}?list=${listId}`)
       .then(req => req.json())
       .catch(error => ({ error }));
   }
