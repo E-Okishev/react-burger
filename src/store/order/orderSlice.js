@@ -39,13 +39,13 @@ const orderSlice = createSlice({
     addProduct: (state, action) => {
       const productOrderList = state.orderList.find(
         item => item.id === action.payload.id
-        );
+      );
 
       if (productOrderList) {
         productOrderList.count += 1;
 
         const productOrderGoods = state.orderGoods.find(
-          item => item.id === action.payload.id, 
+          item => item.id === action.payload.id,
         );
 
         productOrderGoods.count = productOrderList.count;
@@ -71,7 +71,11 @@ const orderSlice = createSlice({
       } else {
         state.orderList = state.orderList.filter(item => item.id !== action.payload.id,)
       }
-    }
+    },
+    clearOrder: (state) => {
+      state.orderList = [];
+      state.orderGoods = [];
+    },
   },
   extraReducers: builder => {
     builder
@@ -98,5 +102,5 @@ const orderSlice = createSlice({
   }
 })
 
-export const { addProduct, removeProduct } = orderSlice.actions;
+export const { addProduct, removeProduct, clearOrder } = orderSlice.actions;
 export default orderSlice.reducer;
